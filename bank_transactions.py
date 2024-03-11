@@ -7,7 +7,7 @@ def solution(A, D):
     fee = 5 #fee to be paid per month
     prev_month = None #setting the value of previous month to nothing and will need to be updated
     transactions_in_month = 0 #counter for transactions in the current month
-    for amount, date in zip(transactions, dates): #iterating through the amount balance in the transaction list
+    for amount, date in zip(transactions, dates): #iterating through the amount balance in the transaction list and the dates using zip
         if amount < 0:
             bal -= abs(amount) #if amount is negative then do absolute amount balance - amount to subtract it is a card payment
         else:
