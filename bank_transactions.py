@@ -2,7 +2,7 @@ from datetime import datetime
 
 def solution(A, D):
     transactions = A #transaction list
-    dates = D #dates list
+    dates = [datetime.strptime(d, "%Y-%m-%d") for d in D] #dates list
     bal = 0 #initial balance at beginning of year
     fee = 5 #fee to be paid per month
     prev_month = None #setting the value of previous month to nothing and will need to be updated
@@ -22,5 +22,5 @@ def solution(A, D):
     
 #example usage
 transactions = [100, 100, -10, -20, -30] 
-dates = [datetime(2020, 1, 1), datetime(2020, 2, 1), datetime(2020, 2, 11), datetime(2020, 2, 5), datetime(2020, 2, 8)]
+dates = ["2020-01-01", "2020-02-01", "2020-02-11", "2020-02-05", "2020-02-08"]
 print(solution(transactions, dates))
