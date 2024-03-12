@@ -2,7 +2,7 @@ from datetime import datetime
 
 def solution(A, D):
     transactions = A #transaction list
-    dates = [datetime.strptime(d, "%Y-%m-%d") for d in D] #dates list in yyyy-mm-dd format
+    dates = [datetime.strptime(d, "%Y-%m-%d") for d in D] #dates list in yyyy-mm-dd
     bal = 0 #initial balance at beginning of year
     fee = 5 #fee to be paid per month
     prev_month = None #setting the value of previous month to nothing and will need to be updated
@@ -18,7 +18,7 @@ def solution(A, D):
                 bal -= fee #deduuct the fee for the month        
             transactions_in_month = 0 #reseting the transaction count for the new month
             prev_month = date.month #update previous month to current month
-    return bal
+    return bal #returns balance at end of year
     
 #example usage
 transactions = [100, 100, -10, -20, -30] 
