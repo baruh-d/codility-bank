@@ -14,7 +14,7 @@ def solution(A, D):
             bal += amount #if amount is positive then do amount balance + amount to add an incoming transfer
             transactions_in_month += 1 #increment the transaction count for the new month
         if date.month != prev_month:
-            if transactions_in_month < 3 and sum(transactions) < 100:
+            if transactions_in_month < 3 and sum(transactions) < 100: #check if the transactions are less than three and also if they add up to 100
                 bal -= fee #deduuct the fee for the month        
             transactions_in_month = 0 #reseting the transaction count for the new month
             prev_month = date.month #update previous month to current month
