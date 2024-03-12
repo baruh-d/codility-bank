@@ -14,15 +14,13 @@ def solution(A, D):
             bal += amount #if amount is positive then do amount balance + amount to add an incoming transfer
             transactions_in_month += 1 #increment the transaction count for the new month
         if date.month != prev_month:
-            if transactions_in_month >= 3 and sum(transactions) >= 100:
-                pass #if results to true then do not deduct fee
-            else:
-                bal -= fee #deduuct the fee for the month
+            if transactions_in_month < 3 and sum(transactions) < 100:
+                bal -= fee #deduuct the fee for the month        
             transactions_in_month = 0 #reseting the transaction count for the new month
             prev_month = date.month #update previous month to current month
     return bal
     
-    
+#example usage
 transactions = [100, 100, -10, -20, -30] 
 dates = [datetime(2020, 1, 1), datetime(2020, 2, 1), datetime(2020, 2, 11), datetime(2020, 2, 5), datetime(2020, 2, 8)]
 print(solution(transactions, dates))
